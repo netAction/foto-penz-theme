@@ -1,0 +1,185 @@
+// Enter LESS code here. main.css will be generated automatically.
+
+
+// Inspiration: http://www.timbercoast.com/index.html
+
+
+@color-white: #fff;
+@color-neutral-light: #DEDEDE;
+@color-neutral: #AAAAAA;
+@color-neutral-dark: #464646;
+@color-black: #333;
+
+
+
+@font-face {
+	font-family: 'Muli';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Muli'), url(../fonts/Muli-Regular.woff) format('woff');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+body {
+	min-height: 100%;
+
+	font-family: 'Muli', sans-serif;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dedede+0,f3f3f3+100 */
+	background: rgb(222,222,222); /* Old browsers */
+	background: -moz-linear-gradient(top, @color-neutral-light 0%, rgba(243,243,243,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color-neutral-light), color-stop(100%,rgba(243,243,243,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, @color-neutral-light 0%,rgba(243,243,243,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, @color-neutral-light 0%,rgba(243,243,243,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, @color-neutral-light 0%,rgba(243,243,243,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, @color-neutral-light 0%,rgba(243,243,243,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color-neutral-light', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+
+
+.image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
+
+// Main Header
+header.banner {
+	margin-top: 30px;
+
+	.container {
+		background-color: @color-white;
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+
+		.header-titleimage {
+			position: relative;
+
+			button.navbar-toggle {
+				border-radius: 0;
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+
+				background-color: @color-white;
+
+				.icon-bar {
+					background-color: @color-neutral-dark;
+				}
+
+			}
+		}
+
+		nav.nav-primary {
+			margin-top: 10px;
+			border-radius: 0;
+			border-width: 0;
+			background-color: @color-neutral;
+			min-height: 0;
+
+
+			div.navbar-collapse {
+				padding: 0;
+
+				ul.nav {
+					margin: 0;
+
+					> li {
+						//display: inline-block;
+
+						> a {
+							//display: inline-block;
+							color: @color-white;
+						}
+
+						&.current-menu-item > a, > a:focus, > a:hover, > a:active {
+							background-color: @color-neutral-dark;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+.main-wrap {
+	background-color: @color-white;
+}
+
+
+aside.sidebar {
+	nav.nav-primary-secondlevel {
+		ul.nav {
+			> li {
+				display: none;
+
+				&.current-menu-item, &.current-menu-ancestor {
+					display: block;
+
+					> a {
+						display: none;
+					}
+
+					> ul {
+						padding: 0;
+						list-style-type: none;
+
+						> li {
+							display: inline-block;
+							float: left;
+
+							@media(min-width:992px) {
+								display: block;
+								float: none;
+							}
+
+							> a {
+								background-color: @color-neutral-light;
+								padding: 6px 10px 6px 10px;
+								color: @color-white;
+
+								display: inline-block;
+
+								@media(min-width:992px) {
+									display: block;
+									border-bottom: 1px solid @color-neutral;
+								}
+							}
+
+							&.current-menu-item > a, > a:focus, > a:hover, > a:active {
+								background-color: @color-neutral;
+								text-decoration: none;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
+
+footer.content-info {
+	margin-bottom: 50px;
+
+	.container {
+		background-color: @color-white;
+
+		section.widget {
+			background-color: @color-neutral-dark;
+			color: @color-white;
+			margin-bottom: 15px;
+			padding: 4px 8px;
+		}
+	}
+}
