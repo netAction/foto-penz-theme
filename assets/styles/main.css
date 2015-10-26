@@ -26,10 +26,81 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color-neutral-light', endColorstr='#f3f3f3', GradientType=0);
   /* IE6-9 */
 }
+@media (min-width: 992px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  p {
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) {
+  blockquote p {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  blockquote p {
+    font-size: 24px;
+  }
+}
 .image {
   display: block;
   width: 100%;
   height: auto;
+}
+img.size-thumbnail,
+img.size-medium,
+img.size-large,
+img.size-full,
+figure.wp-caption.aligncenter,
+figure.wp-caption.alignright,
+figure.wp-caption.alignleft,
+figure.wp-caption.aligncenter img,
+figure.wp-caption.alignright img,
+figure.wp-caption.alignleft img {
+  display: block;
+  width: 100% !important;
+  height: auto;
+}
+@media (min-width: 768px) {
+  figure.wp-caption.alignright,
+  img.alignright {
+    clear: both;
+    float: right;
+    width: 50% !important;
+  }
+  figure.wp-caption.alignleft,
+  img.alignleft {
+    clear: both;
+    float: left;
+    width: 50% !important;
+  }
+}
+@media (min-width: 992px) {
+  figure.wp-caption.alignright,
+  img.alignright,
+  figure.wp-caption.alignleft,
+  img.alignleft {
+    width: 33% !important;
+  }
+}
+.gallery .row {
+  margin-left: -7px;
+  margin-right: -7px;
+}
+.gallery .col {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 header.banner {
   margin-top: 30px;
@@ -76,6 +147,7 @@ header.banner .container nav.nav-primary div.navbar-collapse ul.nav > li > a:act
 }
 .main-wrap {
   background-color: #ffffff;
+  padding-bottom: 15px;
 }
 aside.sidebar nav.nav-primary-secondlevel ul.nav > li {
   display: none;
@@ -116,7 +188,6 @@ aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul
   aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > li > a,
   aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul > li > a {
     display: block;
-    border-bottom: 1px solid #aaaaaa;
   }
 }
 aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > li.current-menu-item > a,
@@ -129,6 +200,12 @@ aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > l
 aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul > li > a:active {
   background-color: #aaaaaa;
   text-decoration: none;
+}
+@media (min-width: 992px) {
+  aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > li + li,
+  aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul > li + li {
+    border-top: 1px solid #aaaaaa;
+  }
 }
 footer.content-info {
   margin-bottom: 50px;

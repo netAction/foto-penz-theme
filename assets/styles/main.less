@@ -40,6 +40,24 @@ body {
 
 
 
+p {
+	@media(min-width:992px) {
+		font-size: 16px;
+	}
+	@media(min-width:1200px) {
+		font-size: 18px;
+	}
+}
+
+blockquote p {
+	@media(min-width:992px) {
+		font-size: 20px;
+	}
+	@media(min-width:1200px) {
+		font-size: 24px;
+	}
+}
+
 
 .image {
 	display: block;
@@ -47,6 +65,56 @@ body {
 	height: auto;
 }
 
+
+// Images from WYSIWYG-Editor
+img.size-thumbnail, img.size-medium, img.size-large, img.size-full,
+figure.wp-caption.aligncenter, figure.wp-caption.alignright, figure.wp-caption.alignleft,
+figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-caption.alignleft img {
+	display: block;
+	width: 100% !important;
+	height: auto;
+}
+
+@media(min-width:768px) {
+	figure.wp-caption.alignright, img.alignright {
+		clear: both;
+		float: right;
+		width: 50% !important;
+	}
+	figure.wp-caption.alignleft, img.alignleft {
+		clear: both;
+		float: left;
+		width: 50% !important;
+	}
+}
+
+@media(min-width:992px) {
+	figure.wp-caption.alignright, img.alignright, figure.wp-caption.alignleft, img.alignleft {
+		width: 33% !important;
+	}
+
+}
+
+
+// Image Gallery in WYSIWYG-Content
+.gallery {
+	.row {
+		margin-left: -7px;
+		margin-right: -7px;
+	}
+	.col {
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		margin-top: 7px;
+		margin-bottom: 7px;
+	}
+
+}
 
 
 // Main Header
@@ -113,6 +181,7 @@ header.banner {
 
 .main-wrap {
 	background-color: @color-white;
+	padding-bottom: 15px;
 }
 
 
@@ -148,16 +217,21 @@ aside.sidebar {
 								color: @color-white;
 
 								display: inline-block;
-
 								@media(min-width:992px) {
 									display: block;
-									border-bottom: 1px solid @color-neutral;
 								}
 							}
 
 							&.current-menu-item > a, > a:focus, > a:hover, > a:active {
 								background-color: @color-neutral;
 								text-decoration: none;
+							}
+
+							+ li {
+								@media(min-width:992px) {
+									border-top: 1px solid @color-neutral;
+								}
+
 							}
 						}
 					}
