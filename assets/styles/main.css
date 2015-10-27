@@ -113,6 +113,15 @@ figure.wp-caption.alignleft img {
     padding-right: 15px;
   }
 }
+address {
+  line-height: 1.8em;
+  font-size: 14px;
+}
+@media (min-width: 992px) {
+  address {
+    font-size: 18px;
+  }
+}
 .btn {
   border-radius: 0;
   border-width: 2px;
