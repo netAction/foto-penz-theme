@@ -259,3 +259,6 @@ footer.content-info .container section.widget {
   margin-bottom: 15px;
   padding: 4px 8px;
 }
+footer.content-info .container section.widget a {
+  color: #ffffff;
+}
