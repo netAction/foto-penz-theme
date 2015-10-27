@@ -105,6 +105,7 @@ figure.wp-caption.alignleft img {
 .container .jumbotron {
   border-radius: 0;
   background-color: #dedede;
+  background-size: cover;
 }
 @media (max-width: 767px) {
   .container .jumbotron {
