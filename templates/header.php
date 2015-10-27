@@ -1,7 +1,7 @@
 <header class="banner">
 	<div class="container">
 		<div class="header-titleimage">
-
+		<a href="<?= esc_url(home_url('/')); ?>">
 			<?php if (get_theme_mod('header_image_xs')) { ?>
 				<img src="<?php echo get_theme_mod('header_image_xs'); ?>" class="image visible-xs">
 			<?php } ?>
@@ -14,14 +14,17 @@
 			<?php if (get_theme_mod('header_image_lg')) { ?>
 				<img src="<?php echo get_theme_mod('header_image_lg'); ?>" class="image visible-lg">
 			<?php } ?>
+		</a>
 
 			<?php if (has_nav_menu('primary_navigation')) { ?>
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+			<div class="navbar-toggle-wrapper">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
 			<?php } ?>
 	</div>
 

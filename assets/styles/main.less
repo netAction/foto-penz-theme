@@ -117,6 +117,46 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 }
 
 
+.container .jumbotron {
+	border-radius: 0;
+	background-color: @color-neutral-light;
+
+	@media(max-width:767px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+
+.btn {
+	border-radius: 0;
+	border-width: 2px;
+	font-weight: bold;
+
+	&.btn-default {
+		color: @color-black;
+		border-color: @color-neutral;
+		background-color: @color-white;
+
+		&:hover, &:active, &:focus {
+			background-color: @color-neutral-light;
+		}
+	}
+
+	&.btn-primary {
+		color: @color-white;
+		border-color: @color-white;
+		background-color: @color-neutral;
+
+		&:hover, &:active, &:focus {
+			background-color: @color-neutral-light;
+		}
+	}
+
+
+}
+
+
 // Main Header
 header.banner {
 	margin-top: 30px;
@@ -130,18 +170,22 @@ header.banner {
 		.header-titleimage {
 			position: relative;
 
-			button.navbar-toggle {
-				border-radius: 0;
+			.navbar-toggle-wrapper {
 				position: absolute;
-				right: 20px;
-				bottom: 20px;
+				right: 0;
+				bottom: 0;
+				padding: 30px;
 
-				background-color: @color-white;
+				button.navbar-toggle {
+					margin: 0;
+					border-radius: 0;
 
-				.icon-bar {
-					background-color: @color-neutral-dark;
+					background-color: @color-white;
+
+					.icon-bar {
+						background-color: @color-neutral-dark;
+					}
 				}
-
 			}
 		}
 

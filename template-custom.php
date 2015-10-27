@@ -1,6 +1,6 @@
 <!-- Template: template-custom.php --><?php
 /**
- * Template Name: Custom Template
+ * T BLOCK emplate Name: Custom Template
  */
 ?>
 

@@ -102,6 +102,41 @@ figure.wp-caption.alignleft img {
   margin-top: 7px;
   margin-bottom: 7px;
 }
+.container .jumbotron {
+  border-radius: 0;
+  background-color: #dedede;
+}
+@media (max-width: 767px) {
+  .container .jumbotron {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.btn {
+  border-radius: 0;
+  border-width: 2px;
+  font-weight: bold;
+}
+.btn.btn-default {
+  color: #333333;
+  border-color: #aaaaaa;
+  background-color: #ffffff;
+}
+.btn.btn-default:hover,
+.btn.btn-default:active,
+.btn.btn-default:focus {
+  background-color: #dedede;
+}
+.btn.btn-primary {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: #aaaaaa;
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:active,
+.btn.btn-primary:focus {
+  background-color: #dedede;
+}
 header.banner {
   margin-top: 30px;
 }
@@ -113,14 +148,18 @@ header.banner .container {
 header.banner .container .header-titleimage {
   position: relative;
 }
-header.banner .container .header-titleimage button.navbar-toggle {
-  border-radius: 0;
+header.banner .container .header-titleimage .navbar-toggle-wrapper {
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+}
+header.banner .container .header-titleimage .navbar-toggle-wrapper button.navbar-toggle {
+  margin: 0;
+  border-radius: 0;
   background-color: #ffffff;
 }
-header.banner .container .header-titleimage button.navbar-toggle .icon-bar {
+header.banner .container .header-titleimage .navbar-toggle-wrapper button.navbar-toggle .icon-bar {
   background-color: #464646;
 }
 header.banner .container nav.nav-primary {
