@@ -26,6 +26,20 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color-neutral-light', endColorstr='#f3f3f3', GradientType=0);
   /* IE6-9 */
 }
+.page-header {
+  margin-top: 0;
+  border-bottom-color: #464646;
+}
+h1,
+.h1 {
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  h1,
+  .h1 {
+    font-size: 30px;
+  }
+}
 @media (min-width: 992px) {
   p {
     font-size: 16px;
@@ -187,8 +201,16 @@ header.banner .container nav.nav-primary div.navbar-collapse ul.nav {
 }
 header.banner .container nav.nav-primary div.navbar-collapse ul.nav > li > a {
   color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+@media (min-width: 768px) {
+  header.banner .container nav.nav-primary div.navbar-collapse ul.nav > li > a {
+    border-bottom-width: 0;
+    border-right: 1px solid #dedede;
+  }
 }
 header.banner .container nav.nav-primary div.navbar-collapse ul.nav > li.current-menu-item > a,
+header.banner .container nav.nav-primary div.navbar-collapse ul.nav > li.current-menu-ancestor > a,
 header.banner .container nav.nav-primary div.navbar-collapse ul.nav > li > a:focus,
 header.banner .container nav.nav-primary div.navbar-collapse ul.nav > li > a:hover,
 header.banner .container nav.nav-primary div.navbar-collapse ul.nav > li > a:active {
@@ -229,16 +251,22 @@ aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul
 aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > li > a,
 aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul > li > a {
   background-color: #dedede;
-  padding: 6px 10px 6px 10px;
-  color: #ffffff;
+  padding: 8px 10px 8px 10px;
+  color: #333333;
+  margin-bottom: 5px;
+  margin-right: 5px;
   display: inline-block;
 }
 @media (min-width: 992px) {
   aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > li > a,
   aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul > li > a {
     display: block;
+    margin-bottom: 0;
+    margin-right: 0;
   }
 }
+aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > li.current-menu-ancestor > a,
+aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul > li.current-menu-ancestor > a,
 aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > li.current-menu-item > a,
 aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-ancestor > ul > li.current-menu-item > a,
 aside.sidebar nav.nav-primary-secondlevel ul.nav > li.current-menu-item > ul > li > a:focus,
