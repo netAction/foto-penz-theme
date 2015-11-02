@@ -231,6 +231,10 @@ header.banner {
 						> a {
 							color: @color-white;
 							border-bottom: 1px solid @color-white;
+							@media(min-width:768px) {
+								border-bottom-width: 0;
+								border-right: 1px solid @color-white;
+							}
 						}
 
 						&.current-menu-item > a, > a:focus, > a:hover, > a:active {
