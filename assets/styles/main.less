@@ -237,7 +237,7 @@ header.banner {
 							}
 						}
 
-						&.current-menu-item > a, > a:focus, > a:hover, > a:active {
+						&.current-menu-item > a, &.current-menu-ancestor > a, > a:focus, > a:hover, > a:active {
 							background-color: @color-neutral-dark;
 						}
 					}
@@ -296,7 +296,7 @@ aside.sidebar {
 								}
 							}
 
-							&.current-menu-item > a, > a:focus, > a:hover, > a:active {
+							&.current-menu-ancestor > a, &.current-menu-item > a, > a:focus, > a:hover, > a:active {
 								background-color: @color-neutral;
 								text-decoration: none;
 							}
