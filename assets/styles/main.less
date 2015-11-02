@@ -179,6 +179,28 @@ address {
 }
 
 
+
+// Forms
+input, textarea {
+	border-radius: 0;
+	border: 1px solid @color-neutral;
+	padding: 4px 6px;
+
+	&:focus, &:active, &:hover {
+		border-color: @color-neutral-dark;
+	}
+}
+
+
+// Content Form 7 Plugin
+.wpcf7-form {
+	input, textarea {
+		width: 100%;
+	}
+}
+
+
+
 // Main Header
 header.banner {
 	margin-top: 30px;
