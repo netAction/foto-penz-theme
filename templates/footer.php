@@ -1,7 +1,5 @@
-<footer class="content-info">
-	<div class="container">
-
-
+<footer>
+	<div class="container footer-navigations">
 		<nav class="footer-nav nav-primary-thirdlevel">
 			<?php
 			if (has_nav_menu('primary_navigation')) :
@@ -26,7 +24,13 @@
 			?>
 		</nav>
 
+	</div>
 
+	<div class="container header-footer-widgets hidden-sm hidden-md hidden-lg">
+		<?php dynamic_sidebar('sidebar-header'); ?>
+	</div>
+
+	<div class="container header-footer-widgets">
 		<?php dynamic_sidebar('sidebar-footer'); ?>
 	</div>
 </footer>

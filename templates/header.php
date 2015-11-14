@@ -1,5 +1,11 @@
+<div class="container header-footer-widgets hidden-xs">
+	<?php dynamic_sidebar('sidebar-header'); ?>
+</div>
+
 <header class="banner">
+
 	<div class="container">
+
 		<div class="row">
 			<div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-0 col-md-3 col-lg-3 banner-logo-col">
 				<a href="<?= esc_url(home_url('/')); ?>">

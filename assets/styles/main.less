@@ -22,7 +22,9 @@
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-
+html {
+	min-height: 100%;
+}
 body {
 	min-height: 100%;
 
@@ -221,12 +223,59 @@ input, textarea {
 
 
 
+
+.container.header-footer-widgets {
+	margin-top: 15px;
+	min-height: 15px;
+
+	section.widget {
+		display: inline-block;
+		color: @color-neutral-dark;
+		margin-bottom: 15px;
+
+		a {
+			color: @color-black;
+		}
+
+		&.widget_nav_menu {
+			// Custom navigation
+
+			ul.menu {
+				padding: 0;
+				list-style-type: none;
+				margin-bottom: 0;
+
+				li {
+					display: inline-block;
+
+					a {
+						padding: 0 6px;
+						font-size: 16px;
+					}
+
+					+ li {
+						margin-left: 5px;
+					}
+
+					&.current-menu-item a, &.current-menu-ancestor a, a:hover, a:focus, a:active {
+						background-color: @color-neutral-dark;
+						color: @color-white;
+						text-decoration: none;
+					}
+				}
+
+			}
+		}
+
+		+ section.widget {
+			margin-left: 15px;
+		}
+	}
+
+}
+
 // Main Header
 header.banner {
-
-	@media(min-width:768px) {
-		margin-top: 30px;
-	}
 
 	.container {
 		background-color: @color-white;
@@ -305,19 +354,20 @@ header.banner {
 
 
 
-footer.content-info {
-	margin-bottom: 50px;
+footer {
 
-	.container {
+	.container.footer-navigations {
 		background-color: @color-neutral-dark;
 
 
 		.footer-nav {
 			li.menu-item {
 				display: inline-block;
+				float: left;
 
 				a {
 					color: @color-white;
+					border-right: 1px solid @color-neutral;
 				}
 
 				&.current-menu-item > a, &.current-menu-ancestor > a, a:hover, a:focus, a:active {
@@ -329,6 +379,10 @@ footer.content-info {
 
 			&.nav-primary {
 				background-color: @color-neutral-dark;
+
+				border-bottom: 2px solid @color-neutral-dark;
+				border-top: 2px solid @color-neutral-dark;
+
 				li.menu-item {
 					a {
 						font-size: 16px;
@@ -337,6 +391,8 @@ footer.content-info {
 			}
 			&.nav-primary-secondlevel {
 				background-color: @color-neutral-dark2;
+				padding: 0 15px;
+
 
 				ul.nav {
 					> li {
@@ -355,11 +411,10 @@ footer.content-info {
 
 								> li {
 									display: inline-block;
+									padding-top: 2px;
 
 									> a {
 										padding: 8px 10px 8px 10px;
-										margin-bottom: 5px;
-										margin-right: 5px;
 
 										font-size: 14px;
 
@@ -383,6 +438,7 @@ footer.content-info {
 				background-color: @color-neutral-dark3;
 				border: 1px solid @color-neutral-dark2;
 				border-width: 0 15px 0 15px;
+				padding: 0 15px;
 
 				ul.nav {
 					> li {
@@ -420,8 +476,6 @@ footer.content-info {
 
 												> a {
 													padding: 8px 10px 8px 10px;
-													margin-bottom: 5px;
-													margin-right: 5px;
 
 													font-size: 12px;
 
@@ -447,15 +501,5 @@ footer.content-info {
 			}
 		}
 
-		section.widget {
-			background-color: @color-neutral-dark;
-			color: @color-white;
-			margin-bottom: 15px;
-			padding: 4px 8px;
-
-			a {
-				color: @color-white;
-			}
-		}
 	}
 }
