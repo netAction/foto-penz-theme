@@ -1,5 +1,6 @@
 (function($) {
 
-  $( '.gallery a' ).swipebox();
+  $( '.gallery a:not(.gallery-navlink)' ).swipebox();
 
 })(jQuery);
+
