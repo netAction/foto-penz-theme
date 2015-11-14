@@ -53,14 +53,6 @@ function widgets_init() {
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3>'
 	]);
-	register_sidebar([
-		'name'          => 'Blog',
-		'id'            => 'sidebar-blog',
-		'before_widget' => '<section class="widget %1$s %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>'
-	]);
 
 	register_sidebar([
 		'name'          => __('Footer', 'sage'),
@@ -80,13 +72,9 @@ add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 function display_sidebar() {
 	static $display;
 
-	isset($display) || $display = !in_array(true, [
-		// The sidebar will NOT be displayed if ANY of the following return true.
-		// @link https://codex.wordpress.org/Conditional_Tags
-		is_404(),
-		is_front_page(),
-		is_page_template('template-plain.php'),
-	]);
+	isset($display) || $display =
+		( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( get_post_type($post) == 'post') );
+
 
 	return apply_filters('sage/display_sidebar', $display);
 }
