@@ -262,6 +262,9 @@ header.banner {
 			@media(min-width:1200px) {
 				height: 185px;
 			}
+
+			background-position: center center;
+			background-size: cover;
 		}
 
 		.page-header {
@@ -300,66 +303,6 @@ header.banner {
 }
 
 
-aside.sidebar {
-	nav.nav-primary-secondlevel {
-		ul.nav {
-			> li {
-				display: none;
-
-				&.current-menu-item, &.current-menu-ancestor {
-					display: block;
-
-					> a {
-						display: none;
-					}
-
-					> ul {
-						padding: 0;
-						list-style-type: none;
-
-						> li {
-							display: inline-block;
-							float: left;
-
-							@media(min-width:992px) {
-								display: block;
-								float: none;
-							}
-
-							> a {
-								background-color: @color-neutral-light;
-								padding: 8px 10px 8px 10px;
-								color: @color-black;
-								margin-bottom: 5px;
-								margin-right: 5px;
-
-								display: inline-block;
-								@media(min-width:992px) {
-									display: block;
-									margin-bottom: 0;
-									margin-right: 0;
-								}
-							}
-
-							&.current-menu-ancestor > a, &.current-menu-item > a, > a:focus, > a:hover, > a:active {
-								background-color: @color-neutral;
-								text-decoration: none;
-							}
-
-							+ li {
-								@media(min-width:992px) {
-									border-top: 1px solid @color-neutral;
-								}
-
-							}
-						}
-					}
-				}
-
-			}
-		}
-	}
-}
 
 
 footer.content-info {
@@ -377,7 +320,7 @@ footer.content-info {
 					color: @color-white;
 				}
 
-				&.current-menu-item a, &.current-menu-ancestor a, a:hover, a:focus, a:active {
+				&.current-menu-item > a, &.current-menu-ancestor > a, a:hover, a:focus, a:active {
 					background-color: @color-white;
 					color: @color-neutral-dark;
 				}
@@ -394,9 +337,45 @@ footer.content-info {
 			}
 			&.nav-primary-secondlevel {
 				background-color: @color-neutral-dark2;
-				li.menu-item {
-					a {
-						font-size: 14px;
+
+				ul.nav {
+					> li {
+						display: none;
+
+						&.current-menu-item, &.current-menu-ancestor {
+							display: block;
+
+							> a {
+								display: none;
+							}
+
+							> ul {
+								padding: 0;
+								list-style-type: none;
+
+								> li {
+									display: inline-block;
+
+									> a {
+										padding: 8px 10px 8px 10px;
+										margin-bottom: 5px;
+										margin-right: 5px;
+
+										font-size: 14px;
+
+										display: inline-block;
+									}
+
+									&.current-menu-ancestor > a, &.current-menu-item > a, > a:focus, > a:hover, > a:active {
+										background-color: @color-white;
+										color: @color-black;
+										text-decoration: none;
+									}
+
+								}
+							}
+						}
+
 					}
 				}
 			}
@@ -404,11 +383,67 @@ footer.content-info {
 				background-color: @color-neutral-dark3;
 				border: 1px solid @color-neutral-dark2;
 				border-width: 0 15px 0 15px;
-				li.menu-item {
-					a {
-						font-size: 12px;
+
+				ul.nav {
+					> li {
+						display: none;
+
+						&.current-menu-item, &.current-menu-ancestor {
+							display: block;
+
+							> a {
+								display: none;
+							}
+
+							> ul {
+								padding: 0;
+								list-style-type: none;
+
+
+								> li {
+									display: none;
+
+									&.current-menu-item, &.current-menu-ancestor {
+										display: block;
+
+										> a {
+											display: none;
+										}
+
+										> ul {
+											padding: 0;
+											list-style-type: none;
+
+
+											> li {
+												display: inline-block;
+
+												> a {
+													padding: 8px 10px 8px 10px;
+													margin-bottom: 5px;
+													margin-right: 5px;
+
+													font-size: 12px;
+
+													display: inline-block;
+												}
+
+												&.current-menu-ancestor > a, &.current-menu-item > a, > a:focus, > a:hover, > a:active {
+													background-color: @color-white;
+													color: @color-black;
+													text-decoration: none;
+												}
+
+											}
+										}
+									}
+								}
+							}
+						}
+
 					}
 				}
+
 			}
 		}
 
