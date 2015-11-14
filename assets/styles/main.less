@@ -7,6 +7,8 @@
 @color-white: #fff;
 @color-neutral-light: #DEDEDE;
 @color-neutral: #AAAAAA;
+@color-neutral-dark3: #999;
+@color-neutral-dark2: #777;
 @color-neutral-dark: #464646;
 @color-black: #333;
 
@@ -39,10 +41,6 @@ body {
 
 
 
-.page-header {
-	margin-top: 0;
-	border-bottom-color: @color-neutral-dark;
-}
 
 h1, .h1 {
 	font-size: 24px;
@@ -225,69 +223,72 @@ input, textarea {
 
 // Main Header
 header.banner {
-	margin-top: 30px;
+
+	@media(min-width:768px) {
+		margin-top: 30px;
+	}
 
 	.container {
 		background-color: @color-white;
 		padding-top: 15px;
-		padding-bottom: 15px;
+		padding-bottom: 30px;
 
 
-		.header-titleimage {
-			position: relative;
+		.banner-logo-col {
+			padding-right: 2px;
+			@media(max-width:767px) {
+				padding-bottom: 15px;
+			}
 
-			.navbar-toggle-wrapper {
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				padding: 30px;
-
-				button.navbar-toggle {
-					margin: 0;
-					border-radius: 0;
-
-					background-color: @color-white;
-
-					.icon-bar {
-						background-color: @color-neutral-dark;
-					}
-				}
+			.banner-logo {
+				width: 100%;
+				height: auto;
+				display: block;
 			}
 		}
 
-		nav.nav-primary {
-			margin-top: 15px;
-			border-radius: 0;
+		.banner-thumbnail {
+			margin-left: -4px;
+
+			@media(max-width:767px) {
+				height: 150px;
+			}
+			@media(min-width:768px) {
+				height: 156px;
+			}
+			@media(min-width:992px) {
+				height: 150px;
+			}
+			@media(min-width:1200px) {
+				height: 185px;
+			}
+		}
+
+		.page-header {
+			margin: 0;
+			padding: 0;
+
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+
+
 			border-width: 0;
-			background-color: @color-neutral;
-			min-height: 0;
 
-
-			div.navbar-collapse {
+			h2 {
 				padding: 0;
+				margin: 0;
 
-				ul.nav {
-					margin: 0;
-
-					> li {
-						//display: inline-block;
-
-						> a {
-							color: @color-white;
-							border-bottom: 1px solid @color-white;
-							@media(min-width:768px) {
-								border-bottom-width: 0;
-								border-right: 1px solid @color-neutral-light;
-							}
-						}
-
-						&.current-menu-item > a, &.current-menu-ancestor > a, > a:focus, > a:hover, > a:active {
-							background-color: @color-neutral-dark;
-						}
-					}
+				span {
+					background-color: @color-white;
+					color: @color-black;
+					font-size: 40px;
+					padding: 3px 10px;
 				}
 			}
 		}
+
+
 	}
 
 }
@@ -365,7 +366,51 @@ footer.content-info {
 	margin-bottom: 50px;
 
 	.container {
-		background-color: @color-white;
+		background-color: @color-neutral-dark;
+
+
+		.footer-nav {
+			li.menu-item {
+				display: inline-block;
+
+				a {
+					color: @color-white;
+				}
+
+				&.current-menu-item a, &.current-menu-ancestor a, a:hover, a:focus, a:active {
+					background-color: @color-white;
+					color: @color-neutral-dark;
+				}
+			}
+
+
+			&.nav-primary {
+				background-color: @color-neutral-dark;
+				li.menu-item {
+					a {
+						font-size: 16px;
+					}
+				}
+			}
+			&.nav-primary-secondlevel {
+				background-color: @color-neutral-dark2;
+				li.menu-item {
+					a {
+						font-size: 14px;
+					}
+				}
+			}
+			&.nav-primary-thirdlevel {
+				background-color: @color-neutral-dark3;
+				border: 1px solid @color-neutral-dark2;
+				border-width: 0 15px 0 15px;
+				li.menu-item {
+					a {
+						font-size: 12px;
+					}
+				}
+			}
+		}
 
 		section.widget {
 			background-color: @color-neutral-dark;

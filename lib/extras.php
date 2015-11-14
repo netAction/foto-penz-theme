@@ -57,52 +57,24 @@ if (is_admin()) {
 
 
 // ### Setup header images for all screen sizes
-
-function theme_customize_header_images( $wp_customize ) {
-	//All our sections, settings, and controls will be added here
-
+function theme_customize_logo( $wp_customize ) {
 
 	$wp_customize->add_section( 'theme_header_images' , array(
-		'title'      => 'Bilder im Header',
-		'description' => 'Stelle die Bilder im Kopf für vier verschiedene Bildschirmgrößen ein.',
+		'title'      => 'Logo',
+		'description' => 'Seitenverhältnis 2:3 beachten.',
 		'priority'   => 30,
 	) );
 
+	$wp_customize->add_setting( 'logo' , array() );
 
-
-	$wp_customize->add_setting( 'header_image_xs' , array() );
-	$wp_customize->add_setting( 'header_image_sm' , array() );
-	$wp_customize->add_setting( 'header_image_md' , array() );
-	$wp_customize->add_setting( 'header_image_lg' , array() );
-
-
-	$wp_customize->add_control( new \WP_Customize_Image_Control($wp_customize, 'header_image_xs', array(
-		'label'    => 'Handy',
+	$wp_customize->add_control( new \WP_Customize_Image_Control($wp_customize, 'logo', array(
+		'label'    => 'Logo',
 		'section'  => 'theme_header_images',
-		'settings' => 'header_image_xs',
+		'settings' => 'logo',
 	)));
-
-	$wp_customize->add_control( new \WP_Customize_Image_Control($wp_customize, 'header_image_sm', array(
-		'label'    => 'Tablet',
-		'section'  => 'theme_header_images',
-		'settings' => 'header_image_sm',
-	)));
-
-	$wp_customize->add_control( new \WP_Customize_Image_Control($wp_customize, 'header_image_md', array(
-		'label'    => 'Notebook',
-		'section'  => 'theme_header_images',
-		'settings' => 'header_image_md',
-	)));
-
-	$wp_customize->add_control( new \WP_Customize_Image_Control($wp_customize, 'header_image_lg', array(
-		'label'    => 'Desktop',
-		'section'  => 'theme_header_images',
-		'settings' => 'header_image_lg',
-	)));
-
 
 }
-add_action( 'customize_register',  __NAMESPACE__ .'\\theme_customize_header_images' );
+add_action( 'customize_register',  __NAMESPACE__ .'\\theme_customize_logo' );
 
 
 

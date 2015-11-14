@@ -21,15 +21,6 @@ use Roots\Sage\Wrapper;
 		<div class="main-wrap container" role="document">
 			<div class="row">
 				<?php if (Setup\display_sidebar()) { ?>
-				<div class="col-md-3">
-					<aside class="sidebar">
-						<?php include Wrapper\sidebar_path(); ?>
-					</aside><!-- /.sidebar -->
-				</div>
-				<?php } ?>
-
-
-				<?php if (Setup\display_sidebar()) { ?>
 				<div class="col-md-9">
 				<?php } else { ?>
 				<div class="col-md-12">
@@ -38,6 +29,14 @@ use Roots\Sage\Wrapper;
 						<?php include Wrapper\template_path(); ?>
 					</main><!-- /.main -->
 				</div>
+
+				<?php if (Setup\display_sidebar()) { ?>
+				<div class="col-md-3">
+					<aside class="sidebar">
+						<?php include Wrapper\sidebar_path(); ?>
+					</aside><!-- /.sidebar -->
+				</div>
+				<?php } ?>
 			</div><!-- row -->
 		</div><!-- main-wrap -->
 		<?php
