@@ -109,7 +109,7 @@ function gallery($attr) {
 
 		if ($attachment->linkurl) {
 			// start link on image and all captions, title and so on
-			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'">';
+			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'" class="gallery-navlink">';
 		}
 
 		$output .= $image."\n";
