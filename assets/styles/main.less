@@ -115,6 +115,7 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		margin-right: -7px;
 	}
 	.col {
+		position: relative;
 		padding-left: 7px;
 		padding-right: 7px;
 	}
@@ -125,6 +126,27 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		margin-top: 7px;
 		margin-bottom: 7px;
 	}
+	.title {
+		position: absolute;
+		top: 14px;
+		left: 0;
+		width: 100%;
+		padding: 0 15px;
+		line-height: 2em;
+
+		span {
+			color: @color-black;
+			background-color: @color-white;
+			font-size: 18px;
+			padding: 0px 3px;
+
+			@media(max-width:767px) {
+				font-size: 14px;
+			}
+		}
+	}
+
+
 
 }
 

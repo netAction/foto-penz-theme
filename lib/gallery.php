@@ -56,7 +56,12 @@ function gallery($attr) {
 
 	$id = intval($id);
 	$columns = (12 % $columns == 0) ? $columns : 3;
-	$grid = sprintf('col-xs-%1$s col', 12 / $columns);
+	if ($columns == 4) {
+		// 4 Columns
+		$grid = sprintf('col-xs-6 col-md-3 col', 12 / $columns);
+	} else {
+		$grid = sprintf('col-xs-%1$s col', 12 / $columns);
+	}
 
 	if ($order === 'RAND') {
 		$orderby = 'none';
@@ -88,34 +93,46 @@ function gallery($attr) {
 	}
 
 	$unique = (get_query_var('page')) ? $instance . '-p' . get_query_var('page') : $instance;
-	$output = '<div class="gallery gallery-' . $id . '-' . $unique . '">';
+	$output = '<div class="gallery gallery-' . $id . '-' . $unique . '">'."\n";
 
 	$i = 0;
 	foreach ($attachments as $id => $attachment) {
-		switch($link) {
-			case 'file':
-				$image = wp_get_attachment_link($id, $size, false, false);
-				break;
-			case 'none':
-				$image = wp_get_attachment_image($id, $size, false, ['class' => 'thumbnail img-thumbnail']);
-				break;
-			default:
-				$image = wp_get_attachment_link($id, $size, true, false);
-				break;
+
+		$output .= ($i % $columns == 0) ? '<div class="row gallery-row">'."\n" : '';
+		if (($link == 'file') && (!$attachment->linkurl)) {
+			$image = wp_get_attachment_link($id, $size, false, false);
+		} else {
+			$image = wp_get_attachment_image($id, $size, false, false);
 		}
-		$output .= ($i % $columns == 0) ? '<div class="row gallery-row">' : '';
-		$output .= '<div class="' . $grid .'">' . $image;
+		$output .= '<div class="' . $grid .'">'."\n";
+
+
+		if ($attachment->linkurl) {
+			// start link on image and all captions, title and so on
+			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'">';
+		}
+
+		$output .= $image."\n";
+
+		if (trim($attachment->post_title)) {
+			$output .= '<div class="title"><span>' . wptexturize($attachment->post_title) . '</span></div>'."\n";
+		}
 
 		if (trim($attachment->post_excerpt)) {
-			$output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
+			$output .= '<div class="caption">'."\n" . wptexturize($attachment->post_excerpt) . '</div>'."\n";
 		}
 
-		$output .= '</div>';
+		if ($attachment->linkurl) {
+			$output .= '<!-- end link --></a>'."\n";
+		}
+
+
+		$output .= '</div>'."\n";
 		$i++;
-		$output .= ($i % $columns == 0) ? '</div>' : '';
+		$output .= ($i % $columns == 0) ? '</div>'."\n" : '';
 	}
 
-	$output .= ($i % $columns != 0 ) ? '</div>' : '';
+	$output .= ($i % $columns != 0 ) ? '</div>'."\n" : '';
 	$output .= '</div>';
 
 	return $output;
