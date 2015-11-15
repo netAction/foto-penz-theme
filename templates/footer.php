@@ -1,14 +1,7 @@
 <footer>
 	<div class="container footer-navigations">
-		<nav class="footer-nav nav-primary-thirdlevel">
-			<?php
-			if (has_nav_menu('primary_navigation')) :
-				wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'depth' => 3]);
-			endif;
-			?>
-		</nav>
 
-		<nav class="footer-nav nav-primary-secondlevel">
+		<nav class="footer-nav">
 			<?php
 			if (has_nav_menu('primary_navigation')) :
 				wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'depth' => 2]);
@@ -16,17 +9,9 @@
 			?>
 		</nav>
 
-		<nav class="footer-nav nav-primary">
-			<?php
-			if (has_nav_menu('primary_navigation')) :
-				wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'depth' => 1]);
-			endif;
-			?>
-		</nav>
-
 	</div>
 
-	<div class="container header-footer-widgets hidden-sm hidden-md hidden-lg">
+	<div class="container header-footer-widgets footer-widgets hidden-sm hidden-md hidden-lg">
 		<?php dynamic_sidebar('sidebar-header'); ?>
 	</div>
 
