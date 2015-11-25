@@ -1,13 +1,11 @@
 <footer>
 	<div class="container footer-navigations">
 
-		<nav class="footer-nav">
-			<?php
-			if (has_nav_menu('primary_navigation')) :
-				wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'depth' => 2]);
-			endif;
-			?>
-		</nav>
+		<?php if (has_nav_menu('primary_navigation')) { ?>
+			<nav class="footer-nav">
+				<?php wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'depth' => 2]); ?>
+			</nav>
+		<?php } ?>
 
 	</div>
 
