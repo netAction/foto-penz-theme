@@ -89,5 +89,5 @@ function register_shortcodes() {
 //	add_filter( 'the_content', '\wpautop' , 12);
 }
 
-//add_action( 'init', __NAMESPACE__ . '\\register_shortcodes');
+add_action( 'init', __NAMESPACE__ . '\\register_shortcodes');
 
