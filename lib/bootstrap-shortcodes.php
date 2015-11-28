@@ -85,8 +85,8 @@ function register_shortcodes() {
 
 	// Ugly hack to get rid of broken P elements
 	// http://sww.nz/solution-to-wordpress-adding-br-and-p-tags-around-shortcodes/
-	remove_filter( 'the_content', 'wpautop' );
-	add_filter( 'the_content', '\wpautop' , 12);
+//	remove_filter( 'the_content', 'wpautop' );
+//	add_filter( 'the_content', '\wpautop' , 12);
 }
 
 add_action( 'init', __NAMESPACE__ . '\\register_shortcodes');
