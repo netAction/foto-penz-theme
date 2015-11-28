@@ -93,12 +93,12 @@ function gallery($attr) {
 	}
 
 	$unique = (get_query_var('page')) ? $instance . '-p' . get_query_var('page') : $instance;
-	$output = '<div class="gallery gallery-' . $id . '-' . $unique . '">'."\n";
+	$output = '<div class="grid-gallery grid-gallery-' . $id . '-' . $unique . '">'."\n";
 
 	$i = 0;
 	foreach ($attachments as $id => $attachment) {
 
-		$output .= ($i % $columns == 0) ? '<div class="row gallery-row">'."\n" : '';
+		$output .= ($i % $columns == 0) ? '<div class="row">'."\n" : '';
 		if (($link == 'file') && (!$attachment->linkurl)) {
 			$image = wp_get_attachment_link($id, $size, false, false);
 		} else {
@@ -109,7 +109,7 @@ function gallery($attr) {
 
 		if ($attachment->linkurl) {
 			// start link on image and all captions, title and so on
-			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'" class="gallery-navlink">';
+			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'" class="grid-gallery-navlink">';
 		}
 
 		$output .= $image."\n";
