@@ -37,16 +37,16 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 // ### Setup image sizes ###
 if (is_admin()) {
 	// This overwrites everything you enter in /wp-admin/options-media.php
-	update_option( 'thumbnail_size_w', 854 );
-	update_option( 'thumbnail_size_h', 480 );
+	update_option( 'thumbnail_size_w', 900 );
+	update_option( 'thumbnail_size_h', 600 );
 	update_option( 'thumbnail_crop', 1 );
 
-	update_option( 'medium_size_w', 854 );
-	update_option( 'medium_size_h', 480 );
+	update_option( 'medium_size_w', 900 );
+	update_option( 'medium_size_h', 600 );
 	update_option( 'medium_crop', 0 );
 
-	update_option( 'large_size_w', 1920 );
-	update_option( 'large_size_h', 1080 );
+	update_option( 'large_size_w', 1500 );
+	update_option( 'large_size_h', 1000 );
 	update_option( 'large_crop', 0 );
 }
 
