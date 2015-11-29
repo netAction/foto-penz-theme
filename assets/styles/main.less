@@ -78,6 +78,7 @@ blockquote p {
 
 // Images from WYSIWYG-Editor
 img.size-thumbnail, img.size-medium, img.size-large, img.size-full,
+img.aligncenter, img.alignright, img.alignleft, img.alignnone,
 figure.wp-caption.aligncenter, figure.wp-caption.alignright, figure.wp-caption.alignleft,
 figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-caption.alignleft img {
 	display: block;
@@ -126,7 +127,7 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 	}
 	.title {
 		position: absolute;
-		top: 14px;
+		bottom: 14px;
 		left: 0;
 		width: 100%;
 		padding: 0 15px;
@@ -135,11 +136,17 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		span {
 			color: @color-black;
 			background-color: @color-white;
-			font-size: 18px;
 			padding: 0px 3px;
+			font-size: 14px;
 
-			@media(max-width:767px) {
-				font-size: 14px;
+			@media(min-width:768px) {
+				font-size: 24px;
+			}
+			@media(min-width:992px) {
+				font-size: 26px;
+			}
+			@media(min-width:1200px) {
+				font-size: 32px;
 			}
 		}
 	}
@@ -356,7 +363,7 @@ header.banner {
 			position: absolute;
 			bottom: 30px;
 			left: 30px;
-			bottom: 13px;
+			bottom: 15px;
 			border-width: 0;
 
 			h2 {
