@@ -16,6 +16,7 @@ $sage_includes = [
 	'lib/titles.php',  // Page titles
 	'lib/wrapper.php',  // Theme wrapper class
 	'lib/gallery.php',  // Image Gallery
+	'lib/breadcrumb.php',// Breadcrumb
 	'lib/bootstrap-shortcodes.php',  // Some Shortcodes for Bootstrap elements in the WYSIWYG editor
 ];
 

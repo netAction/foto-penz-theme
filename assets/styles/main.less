@@ -213,6 +213,17 @@ address {
 
 
 
+ol.breadcrumb {
+	background-color: transparent;
+
+	li {
+		+li::before {
+			content: "> ";
+		}
+	}
+}
+
+
 // Forms
 input, textarea {
 	border-radius: 0;
@@ -345,8 +356,7 @@ header.banner {
 			position: absolute;
 			bottom: 30px;
 			left: 30px;
-
-
+			bottom: 13px;
 			border-width: 0;
 
 			h2 {
@@ -356,10 +366,20 @@ header.banner {
 				span {
 					background-color: @color-white;
 					color: @color-black;
-					font-size: 40px;
-					@media(max-width:767px) {
-						font-size: 24px;
+					line-height: 1.6em;
+					font-size: 24px;
+					@media(min-width:768px) {
+						font-size: 32px;
 					}
+					@media(min-width:992px) {
+						font-size: 36px;
+					}
+					@media(min-width:1200px) {
+						font-size: 40px;
+					}
+
+
+
 					padding: 3px 10px;
 				}
 			}

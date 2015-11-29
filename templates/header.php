@@ -75,5 +75,7 @@
 				<?php get_template_part('templates/page', 'header'); ?>
 			</div>
 		</div><!-- row -->
+
+		<?php Roots\Sage\Breadcrumb\nav_breadcrumb(); ?>
 	</div>
 </header>
