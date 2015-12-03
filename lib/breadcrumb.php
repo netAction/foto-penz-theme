@@ -33,7 +33,7 @@ function get_category_parents_listelements( $id, $visited = array() ) {
 	$before = '<li>'; 
 	$after = '</li>'."\n"; 
 
-		if ( !is_home() && !is_front_page() || is_paged() ) {
+		if ( !is_front_page() || is_paged() ) {
 
 		echo '<ol class="breadcrumb">'."\n";
 
@@ -65,10 +65,12 @@ function get_category_parents_listelements( $id, $visited = array() ) {
 			echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a></li>'."\n";
 			echo $before . get_the_title() . $after;
 			} else {
-			$cat = get_the_category(); $cat = $cat[0];
-			echo get_category_parents_listelements($cat);
+			//$cat = get_the_category(); $cat = $cat[0];
+			//echo get_category_parents_listelements($cat);
 			echo $before . get_the_title() . $after;
 			}
+		} elseif ( is_home() ) {
+			echo $before . 'Aktuelles' . $after;
 		} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 			$post_type = get_post_type_object(get_post_type());
 			echo $before . $post_type->labels->singular_name . $after;
