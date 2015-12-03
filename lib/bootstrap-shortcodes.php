@@ -74,12 +74,29 @@ function jumbotron( $atts, $content = null ) {
 }
 
 
+
+// [shoplink url="http://aktionsgutscheine.myobis.com" linktext="Jetzt buchen"]Hier ist der Shop![/shoplink] 
+function shoplink( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'url' => '#',
+		'linktext' => 'Shop',
+	), $atts );
+
+	return "<div class=\"jumbotron shoplink\" style=\"background-image: url(". get_theme_mod('shop-background-image') .");\""  .">" .
+	fix_paragraphs($content) .
+	"<a href=\"". htmlspecialchars($a['url']) ."\" class=\"btn btn-default pull-right\">". htmlspecialchars($a['linktext']) ."</a>" .
+	"<div class=\"clearfix\"></div>" .
+	"</div>";
+}
+
+
 function register_shortcodes() {
 	add_shortcode( 'bs-clearfix', __NAMESPACE__ . '\\clearfix' );
 	add_shortcode( 'bs-container', __NAMESPACE__ . '\\container' );
 	add_shortcode( 'bs-row', __NAMESPACE__ . '\\row' );
 	add_shortcode( 'bs-col', __NAMESPACE__ . '\\col' );
 	add_shortcode( 'bs-jumbotron', __NAMESPACE__ . '\\jumbotron' );
+	add_shortcode( 'shoplink', __NAMESPACE__ . '\\shoplink' );
 
 
 

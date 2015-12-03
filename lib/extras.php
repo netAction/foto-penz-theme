@@ -56,7 +56,7 @@ if (is_admin()) {
 
 
 
-// ### Setup header images for all screen sizes
+// ### Setup Logo image
 function theme_customize_logo( $wp_customize ) {
 
 	$wp_customize->add_section( 'theme_header_images' , array(
@@ -77,6 +77,25 @@ function theme_customize_logo( $wp_customize ) {
 add_action( 'customize_register',  __NAMESPACE__ .'\\theme_customize_logo' );
 
 
+// ### Setup Shop link background image
+function theme_customize_shop_link_background( $wp_customize ) {
+
+	$wp_customize->add_section( 'theme_shop_background' , array(
+		'title'      => 'Shop-Links',
+		'description' => 'Shortcode: [shoplink url="http://aktionsgutscheine.myobis.com" linktext="Jetzt buchen"]Hier ist der Shop![/shoplink]',
+		'priority'   => 30,
+	) );
+
+	$wp_customize->add_setting( 'shop-background-image' , array() );
+
+	$wp_customize->add_control( new \WP_Customize_Image_Control($wp_customize, 'logo', array(
+		'label'    => 'Hintergrund-Bild',
+		'section'  => 'theme_shop_background',
+		'settings' => 'shop-background-image',
+	)));
+
+}
+add_action( 'customize_register',  __NAMESPACE__ .'\\theme_customize_shop_link_background' );
 
 
 
