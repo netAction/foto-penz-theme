@@ -67,6 +67,7 @@ function get_category_parents_listelements( $id, $visited = array() ) {
 			} else {
 			//$cat = get_the_category(); $cat = $cat[0];
 			//echo get_category_parents_listelements($cat);
+			echo $before . '<a href="'. get_permalink( get_option( 'page_for_posts' ) ) .'">Aktuelles</a>' . $after;
 			echo $before . get_the_title() . $after;
 			}
 		} elseif ( is_home() ) {
