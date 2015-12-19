@@ -85,26 +85,26 @@ function gallery($attr) {
 	}
 
 	if (is_feed()) {
-		$output = "\n";
+		$output = "";
 		foreach ($attachments as $att_id => $attachment) {
-			$output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+			$output .= wp_get_attachment_link($att_id, $size, true);
 		}
 		return $output;
 	}
 
 	$unique = (get_query_var('page')) ? $instance . '-p' . get_query_var('page') : $instance;
-	$output = '<div class="grid-gallery grid-gallery-' . $id . '-' . $unique . '">'."\n";
+	$output = '<div class="grid-gallery grid-gallery-' . $id . '-' . $unique . '">';
 
 	$i = 0;
 	foreach ($attachments as $id => $attachment) {
 
-		$output .= ($i % $columns == 0) ? '<div class="row">'."\n" : '';
+		$output .= ($i % $columns == 0) ? '<div class="row">' : '';
 		if (($link == 'file') && (!$attachment->linkurl)) {
 			$image = wp_get_attachment_link($id, $size, false, false);
 		} else {
 			$image = wp_get_attachment_image($id, $size, false, false);
 		}
-		$output .= '<div class="' . $grid .'">'."\n";
+		$output .= '<div class="' . $grid .'">';
 
 
 		if ($attachment->linkurl) {
@@ -112,27 +112,27 @@ function gallery($attr) {
 			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'" class="grid-gallery-navlink">';
 		}
 
-		$output .= $image."\n";
+		$output .= $image;
 
 		if (trim($attachment->post_title)) {
-			$output .= '<div class="title"><span>' . wptexturize($attachment->post_title) . '</span></div>'."\n";
+			$output .= '<div class="title"><span>' . wptexturize($attachment->post_title) . '</span></div>';
 		}
 
 		if (trim($attachment->post_excerpt)) {
-			$output .= '<div class="caption">'."\n" . wptexturize($attachment->post_excerpt) . '</div>'."\n";
+			$output .= '<div class="caption">' . wptexturize($attachment->post_excerpt) . '</div>';
 		}
 
 		if ($attachment->linkurl) {
-			$output .= '<!-- end link --></a>'."\n";
+			$output .= '<!-- end link --></a>';
 		}
 
 
-		$output .= '</div>'."\n";
+		$output .= '</div>';
 		$i++;
-		$output .= ($i % $columns == 0) ? '</div>'."\n" : '';
+		$output .= ($i % $columns == 0) ? '</div>' : '';
 	}
 
-	$output .= ($i % $columns != 0 ) ? '</div>'."\n" : '';
+	$output .= ($i % $columns != 0 ) ? '</div>' : '';
 	$output .= '</div>';
 
 	return $output;
