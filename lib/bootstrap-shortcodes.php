@@ -6,8 +6,11 @@ namespace Roots\Sage\BootstrapShortcodes;
 
 function fix_paragraphs($content) {
 	// http://sww.nz/solution-to-wordpress-adding-br-and-p-tags-around-shortcodes/
-	$content = do_shortcode( shortcode_unautop( $content ) );
-	$content = wpautop(trim($content));
+//	$content = do_shortcode( shortcode_unautop( $content ) );
+//	$content = wpautop(trim($content));
+
+	// Da das auch nicht funktioniert, jetzt der normale Weg:
+	$content = do_shortcode( $content );
 
 	return $content;
 }
