@@ -248,6 +248,7 @@ address {
 
 ol.breadcrumb {
 	background-color: transparent;
+	margin-bottom: 0;
 
 	li {
 		+li::before {
@@ -300,6 +301,19 @@ input, textarea {
 		> *:last-child {
 			margin-bottom: 0 !important;
 		}
+	}
+}
+
+
+main table {
+	tr + tr {
+		border-top: 1px solid @color-neutral;
+	}
+	tr:hover {
+		background-color: @color-neutral-light;
+	}
+	td {
+		padding: 8px 15px;
 	}
 }
 
@@ -358,7 +372,7 @@ header.banner {
 	.container {
 		background-color: @color-white;
 		padding-top: 15px;
-		padding-bottom: 30px;
+		padding-bottom: 15px;
 
 
 		.banner-logo-col {
