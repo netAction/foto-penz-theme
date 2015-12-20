@@ -125,6 +125,27 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		padding-left: 7px;
 		padding-right: 7px;
 	}
+
+
+	// Auto clear
+	.col-xs-6.col:nth-child(2n+1) {
+		clear:left;
+	}
+	.col-xs-3.col:nth-child(3n+1) {
+		clear:left;
+	}
+	.col-xs-6.col-md-3.col:nth-child(2n+1) {
+		clear:left;
+	}
+	@media(min-width:992px) {
+		.col-xs-6.col-md-3.col:nth-child(2n+1) {
+			clear:none;
+		}
+	}
+	.col-xs-6.col-md-3.col:nth-child(4n+1) {
+		clear:left;
+	}
+
 	.grid-gallery-image-wrapper {
 		position: relative;
 
