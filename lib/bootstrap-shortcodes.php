@@ -10,7 +10,12 @@ function fix_paragraphs($content) {
 //	$content = wpautop(trim($content));
 
 	// Da das auch nicht funktioniert, jetzt der normale Weg:
-	$content = do_shortcode( $content );
+	$content = do_shortcode( trim($content) );
+
+	// Hack from: https://wordpress.org/support/topic/shortcode-is-being-surrounded-by-p-tags#post-1608022
+	if ( '</p>' == substr( $content, 0, 4 )
+	and '<p>' == substr( $content, strlen( $content ) - 3 ) )
+		$content = substr( $content, 4, strlen( $content ) - 7 );
 
 	return $content;
 }
@@ -35,7 +40,7 @@ function container( $atts, $content = null ) {
 // [bs-row][/bs-row]
 function row( $atts, $content = null ) {
 
-	return "<div class=\"row\">" . fix_paragraphs($content) . "</div>";
+	return "<div class=\"row bs-row\">" . fix_paragraphs($content) . "</div>";
 }
 
 // [bs-col xs="3"][/bs-col]
@@ -62,7 +67,7 @@ function col( $atts, $content = null ) {
 	if ($a['lg-offset']) $class .= ' col-lg-offset-'.$a['lg-offset'];
 	$class = trim($class);
 
-	return "<div class=\"".$class."\">" . fix_paragraphs($content) . "</div>";
+	return "<div class=\"bs-col ".$class."\">" . fix_paragraphs($content) . "</div>";
 }
 
 

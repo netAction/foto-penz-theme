@@ -99,30 +99,33 @@ function gallery($attr) {
 	foreach ($attachments as $id => $attachment) {
 
 		$output .= ($i % $columns == 0) ? '<div class="row">'."\n" : '';
-		if (($link == 'file') && (!$attachment->linkurl)) {
-			$image = wp_get_attachment_link($id, $size, false, false);
-		} else {
-			$image = wp_get_attachment_image($id, $size, false, false);
-		}
 		$output .= '<div class="' . $grid .'">'."\n";
 
 
 		if ($attachment->linkurl) {
 			// start link on image and all captions, title and so on
 			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'" class="grid-gallery-navlink">';
+		} else if ($link == 'file') {
+			// this time a link to the image file URL
+			$output .= '<a href="'. htmlspecialchars($attachment->guid) .'" class="grid-gallery-navlink">';
 		}
 
+		$output .= '<div class="grid-gallery-image-wrapper">'."\n";
+
+		$image = wp_get_attachment_image($id, $size, false, false);
 		$output .= $image."\n";
 
 		if (trim($attachment->post_title)) {
 			$output .= '<div class="title"><span>' . wptexturize($attachment->post_title) . '</span></div>'."\n";
 		}
 
+		$output .= '</div>';
+
 		if (trim($attachment->post_excerpt)) {
 			$output .= '<div class="caption">'."\n" . wptexturize($attachment->post_excerpt) . '</div>'."\n";
 		}
 
-		if ($attachment->linkurl) {
+		if (($attachment->linkurl) || ($link == 'file')) {
 			$output .= '<!-- end link --></a>'."\n";
 		}
 

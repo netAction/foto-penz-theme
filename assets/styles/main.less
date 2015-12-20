@@ -122,16 +122,20 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		padding-left: 7px;
 		padding-right: 7px;
 	}
-	img {
-		width: 100%;
-		height: auto;
-		display: block;
-		margin-top: 7px;
-		margin-bottom: 7px;
+	.grid-gallery-image-wrapper {
+		position: relative;
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			margin-top: 7px;
+			margin-bottom: 7px;
+		}
 	}
 	.title {
 		position: absolute;
-		bottom: 14px;
+		bottom: 8px;
 		left: 0;
 		width: 100%;
 		padding: 0 15px;
@@ -142,33 +146,43 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 			background-color: @color-white;
 			padding: 0px 3px;
 			font-size: 14px;
+			line-height: 1.5em;
+		}
 
-			@media(min-width:768px) {
+		@media(min-width:768px) {
+			bottom: 12px;
+			span {
 				font-size: 24px;
 			}
-			@media(min-width:992px) {
+		}
+		@media(min-width:992px) {
+			span {
 				font-size: 26px;
 			}
-			@media(min-width:1200px) {
+		}
+		@media(min-width:1200px) {
+			span {
 				font-size: 32px;
 			}
 		}
+
 	}
 	.grid-gallery-navlink {
 		-moz-transition: opacity 0.5s ease-out;  /* FF4+ */
 		-o-transition: opacity 0.5s ease-out;  /* Opera 10.5+ */
 		-webkit-transition: opacity 0.5s ease-out;  /* Saf3.2+, Chrome */
 		-ms-transition: opacity 0.5s ease-out;  /* IE10? */
-		transition: opacity 0.5s ease-out;  
+		transition: opacity 0.5s ease-out;
 
 		&:hover, &:active, &:focus {
 			opacity: 0.7;
-
-
+			text-decoration: none;
 		}
 	}
 	.caption {
 		background-color: @color-neutral-light;
+		// border: 1px solid @color-black;
+		// border-width: 0 0 1px 0;
 		color: @color-black;
 		padding: 5px 10px;
 		margin-top: -7px;
@@ -276,7 +290,19 @@ input, textarea {
 	}
 }
 
+.bs-row {
+	margin-top: 7px;
+	margin-bottom: 7px;
 
+	.bs-col {
+		*:first-child {
+			margin-top: 0 !important;
+		}
+		*:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+}
 
 .container.header-footer-widgets {
 	margin-top: 15px;
@@ -456,6 +482,7 @@ footer {
 					> a {
 						padding: 10px 15px;
 						display: inline-block;
+						font-size: 16px;
 					}
 
 
