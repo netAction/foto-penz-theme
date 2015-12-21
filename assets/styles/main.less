@@ -5,7 +5,7 @@
 
 
 @color-white: #fff;
-@color-neutral-light: #DEDEDE;
+@color-neutral-light: #F3F4F7;
 @color-neutral: #AAAAAA;
 @color-neutral-dark: #464646;
 @color-black: #333;
@@ -25,18 +25,8 @@ html {
 }
 body {
 	min-height: 100%;
-
 	font-family: 'Muli', sans-serif;
-
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dedede+0,f3f3f3+100 */
-	background: rgb(222,222,222); /* Old browsers */
-	background: -moz-linear-gradient(top, @color-neutral-light 0%, rgba(243,243,243,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color-neutral-light), color-stop(100%,rgba(243,243,243,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, @color-neutral-light 0%,rgba(243,243,243,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, @color-neutral-light 0%,rgba(243,243,243,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, @color-neutral-light 0%,rgba(243,243,243,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, @color-neutral-light 0%,rgba(243,243,243,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color-neutral-light', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+	background-color: @color-neutral-light;
 }
 
 
@@ -161,30 +151,29 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		left: 0;
 		width: 100%;
 		padding: 0 15px;
-		line-height: 2em;
+		line-height: 1.5em;
+		font-size: 14px;
 
 		span {
 			color: @color-black;
 			background-color: @color-white;
 			padding: 0px 3px;
-			font-size: 14px;
-			line-height: 1.5em;
 		}
 
 		@media(min-width:768px) {
 			bottom: 12px;
+			font-size: 24px;
 			span {
-				font-size: 24px;
 			}
 		}
 		@media(min-width:992px) {
+			font-size: 26px;
 			span {
-				font-size: 26px;
 			}
 		}
 		@media(min-width:1200px) {
+			font-size: 32px;
 			span {
-				font-size: 32px;
 			}
 		}
 
