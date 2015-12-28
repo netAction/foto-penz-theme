@@ -88,7 +88,7 @@ function theme_customize_shop_link_background( $wp_customize ) {
 
 	$wp_customize->add_setting( 'shop-background-image' , array() );
 
-	$wp_customize->add_control( new \WP_Customize_Image_Control($wp_customize, 'logo', array(
+	$wp_customize->add_control( new \WP_Customize_Image_Control($wp_customize, 'shop-background-image', array(
 		'label'    => 'Hintergrund-Bild',
 		'section'  => 'theme_shop_background',
 		'settings' => 'shop-background-image',

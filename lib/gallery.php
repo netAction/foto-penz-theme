@@ -55,12 +55,13 @@ function gallery($attr) {
 	], $attr));
 
 	$id = intval($id);
-	$columns = (12 % $columns == 0) ? $columns : 3;
-	if ($columns == 4) {
-		// 4 Columns
-		$grid = sprintf('col-xs-6 col-md-3 col', 12 / $columns);
-	} else {
-		$grid = sprintf('col-xs-%1$s col', 12 / $columns);
+	switch ($columns) {
+		case 1: $grid = 'col-xs-12 col'; break;
+		case 2: $grid = 'col-xs-6 col'; break;
+		case 3: $grid = 'col-xs-4 col'; break;
+		case 4: $grid = 'col-xs-6 col-md-3 col'; break;
+		case 6: $grid = 'col-xs-4 col-md-2 col'; break;
+		default: $grid = 'col-xs-4 col';
 	}
 
 	if ($order === 'RAND') {

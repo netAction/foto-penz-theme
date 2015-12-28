@@ -16,16 +16,38 @@
 	font-family: 'Muli';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Muli'), url(../fonts/Muli-Regular.woff) format('woff');
+	src: url(../fonts/Muli-Regular.woff) format('woff');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
+
+@font-face {
+	font-family: 'URWGothicBook';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/URWGothic-Boo.woff) format('woff');
+}
+
+
+
+.typeface-display() {
+	font-family: 'URWGothicBook', sans-serif;
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 400;
+}
+.typeface-regular() {
+	font-family: 'Muli', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
 
 html {
 	min-height: 100%;
 }
 body {
 	min-height: 100%;
-	font-family: 'Muli', sans-serif;
+	.typeface-regular();
 	background-color: @color-neutral-light;
 }
 
@@ -33,10 +55,14 @@ body {
 
 
 h1, .h1 {
+	.typeface-display();
 	font-size: 24px;
 	@media(min-width:768px) {
 		font-size: 30px;
 	}
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	.typeface-display();
 }
 
 
@@ -127,12 +153,21 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 	.col-xs-6.col-md-3.col:nth-child(2n+1) {
 		clear:left;
 	}
+	.col-xs-4.col-md-2.col:nth-child(3n+1) {
+		clear:left;
+	}
 	@media(min-width:992px) {
 		.col-xs-6.col-md-3.col:nth-child(2n+1) {
 			clear:none;
 		}
+		.col-xs-4.col-md-2.col:nth-child(3n+1) {
+			clear:none;
+		}
 	}
 	.col-xs-6.col-md-3.col:nth-child(4n+1) {
+		clear:left;
+	}
+	.col-xs-4.col-md-2.col:nth-child(6n+1) {
 		clear:left;
 	}
 
@@ -146,6 +181,7 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		}
 	}
 	.title {
+		.typeface-display();
 		position: absolute;
 		bottom: 8px;
 		left: 0;
@@ -157,22 +193,22 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		span {
 			color: @color-black;
 			background-color: @color-white;
-			padding: 0px 3px;
+			padding: 0px 5px;
 		}
 
 		@media(min-width:768px) {
 			bottom: 12px;
-			font-size: 24px;
+			font-size: 20px;
 			span {
 			}
 		}
 		@media(min-width:992px) {
-			font-size: 26px;
+			font-size: 24px;
 			span {
 			}
 		}
 		@media(min-width:1200px) {
-			font-size: 32px;
+			font-size: 26px;
 			span {
 			}
 		}
