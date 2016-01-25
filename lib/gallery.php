@@ -105,10 +105,10 @@ function gallery($attr) {
 
 		if ($attachment->linkurl) {
 			// start link on image and all captions, title and so on
-			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'" class="grid-gallery-navlink">';
+			$output .= '<a href="'. htmlspecialchars($attachment->linkurl) .'" class="grid-gallery-link grid-gallery-navlink">';
 		} else if ($link == 'file') {
 			// this time a link to the image file URL
-			$output .= '<a href="'. htmlspecialchars($attachment->guid) .'" class="grid-gallery-navlink">';
+			$output .= '<a href="'. htmlspecialchars($attachment->guid) .'" class="grid-gallery-link">';
 		}
 
 		$output .= '<div class="grid-gallery-image-wrapper">'."\n";
