@@ -235,24 +235,7 @@ figure.wp-caption.aligncenter img, figure.wp-caption.alignright img, figure.wp-c
 		color: @color-black;
 		padding: 5px 10px;
 	}
-
-
-
 }
-
-
-.container .jumbotron {
-	border-radius: 0;
-	background-color: @color-neutral-light;
-	background-position: center;
-	background-size: cover; // In case inline background-image is set.
-
-	@media(max-width:767px) {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-}
-
 
 
 address {
@@ -282,14 +265,13 @@ address {
 	&.btn-primary {
 		color: @color-white;
 		border-color: @color-white;
-		background-color: @color-neutral;
+		background-color: @color-neutral-dark;
 
 		&:hover, &:active, &:focus {
-			background-color: @color-neutral-light;
+			background-color: @color-black;
+			// border-color: @color-black;
 		}
 	}
-
-
 }
 
 
@@ -512,7 +494,6 @@ header.banner {
 
 
 footer {
-
 	.container.footer-navigations {
 		background-color: @color-neutral-dark;
 
@@ -599,12 +580,8 @@ footer {
 					}
 				}
 			}
-
 		}
-
 	}
-
-
 
 
 	.container.footer-widgets {
@@ -658,3 +635,83 @@ footer {
 	}
 
 }
+
+
+
+
+// ################# widgets ################
+
+.widget-richtext {
+	margin-bottom: 30px;
+
+	*:first-child {
+		margin-top: 0;
+	}
+	*:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.widget-jumbobox .jumbotron {
+	margin-bottom: 30px;
+
+	border-radius: 0;
+	background-color: @color-neutral-light;
+	background-position: center;
+	background-size: cover; // In case inline background-image is set.
+
+	@media(max-width:767px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+}
+
+.widget-blogexcerpt {
+	margin-bottom: 30px;
+}
+
+
+
+.widget-blogpost, .widget-blogpost-small {
+	article {
+		margin-bottom: 40px;
+
+
+		header {
+			margin-bottom: 10px;
+
+			time.updated {
+				color: #888;
+			}
+		}
+
+		.widget-blogexcerpt-thumbnail img, .widget-blogpost-thumbnail img {
+			width: 100%;
+			display: block;
+			height: auto;
+		}
+		.widget-blogpost-thumbnail img {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.widget-button, .widget-backbutton {
+	margin-bottom: 30px;
+}
+
+.widget-slider-gallery {
+	margin-bottom: 53px;
+
+	.widget-richtext {
+		margin-bottom: 0;
+	}
+}
+
+.widget-form {
+	input.form-control, textarea.form-control {
+		width: 100%;
+	}
+}
+
