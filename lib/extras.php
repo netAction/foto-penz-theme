@@ -96,27 +96,3 @@ function theme_customize_shop_link_background( $wp_customize ) {
 
 }
 add_action( 'customize_register',  __NAMESPACE__ .'\\theme_customize_shop_link_background' );
-
-
-
-// ### Extra-Feld bei Medien für URL, zu der die Datei in der Galerie linkt
-function add_attachment_url_field( $form_fields, $post ) {
-	$field_value = get_post_meta( $post->ID, 'linkurl', true );
-	$form_fields['linkurl'] = array(
-		'value' => $field_value ? $field_value : '',
-		'label' => 'Ziel-URL',
-	);
-	return $form_fields;
-}
-add_filter( 'attachment_fields_to_edit', __NAMESPACE__ .'\\add_attachment_url_field', 10, 2 );
-
-function save_attachment_url($post, $attachment) {
-	if( isset( $attachment['linkurl'] ) ) {
-		update_post_meta( $post['ID'], 'linkurl', esc_url( $attachment['linkurl'] ) );
-	}
-
-	return $post;
-}
-add_filter('attachment_fields_to_save', __NAMESPACE__ .'\\save_attachment_url', 10, 2);
-
-

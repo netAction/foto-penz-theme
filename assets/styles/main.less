@@ -251,6 +251,7 @@ address {
 	border-radius: 0;
 	border-width: 2px;
 	font-weight: bold;
+	padding: 8px 12px 7px 12px;
 
 	&.btn-default {
 		color: @color-black;
@@ -700,17 +701,23 @@ footer {
 .widget-button, .widget-backbutton {
 	margin-bottom: 30px;
 }
+.widget-navigation {
+	margin-bottom: 30px;
+	a + a {
+		margin-left: 10px;
+	}
+}
 
 .widget-slider-gallery {
-	margin-bottom: 30px;
+	margin-bottom: 0;
 
 	.widget-richtext {
-		margin-bottom: 0;
+		margin-bottom: 30px;
 	}
 
 	.photo-galleria {
 		margin-top: 0;
-		margin-bootom: 0;
+		margin-bottom: 30px;
 	}
 }
 
@@ -720,3 +727,11 @@ footer {
 	}
 }
 
+.widget-grid-gallery, .widget-grid-navigation {
+	margin-bottom: 30px;
+
+	+ .widget-grid-gallery, + .widget-grid-navigation {
+		// aufeinanderfolgende Galerien sind mit geringerem Abstand gekachelt
+		margin-top: 30px;
+	}
+}
