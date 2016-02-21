@@ -2,12 +2,10 @@
 	<?php if ( has_post_thumbnail() ) { ?>
 	<article>
 		<div class="widget-blogpost-thumbnail">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail(); ?>
-			</a>
+			<?php the_post_thumbnail(); ?>
 		</div>
 		<header>
-			<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<h3 class="entry-title"><?php the_title(); ?></h3>
 			<?php get_template_part('templates/entry-meta'); ?>
 		</header>
 		<div class="entry-content">
@@ -17,7 +15,7 @@
 	<?php } else { ?>
 	<article>
 		<header>
-			<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<h3 class="entry-title"><?php the_title(); ?></h3>
 			<?php get_template_part('templates/entry-meta'); ?>
 		</header>
 		<div class="entry-content">

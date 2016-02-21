@@ -50,8 +50,11 @@
 					}
 
 					// Search for a page that has a thumbnail image. Try this page first, then all parents, then home page.
-					if ( has_post_thumbnail() ) {
-						$background_image_post_id = $post->ID;
+					if (is_single() && has_post_thumbnail( get_option('page_for_posts' )) ) {
+						// Blog-Artikel nehmen Artikelbild von Blog-Übersicht und nicht ihr eigenes
+						$background_image_post_id = get_option('page_for_posts');
+					} else if ( has_post_thumbnail( get_queried_object_id() ) ) {
+						$background_image_post_id = get_queried_object_id();
 					} else {
 						$background_image_post_id = inherited_featured_image();
 
@@ -60,7 +63,7 @@
 						}
 					}
 
-					if ( has_post_thumbnail($background_image_post_id) ) { ?>
+					if ( $background_image_post_id && has_post_thumbnail($background_image_post_id) ) { ?>
 					<div>
 						<div class="banner-thumbnail" style="background-image: url(<?php
 							echo wp_get_attachment_image_src( get_post_thumbnail_id($background_image_post_id), 'medium' )[0];

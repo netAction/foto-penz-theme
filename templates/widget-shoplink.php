@@ -7,7 +7,7 @@
 
 		<div class="h1"><?php echo esc_html(get_sub_field('heading')); ?></div>
 		<?php echo wpautop(esc_html(get_sub_field('text'))); ?>
-		<a href="<?php echo esc_url(get_sub_field('button-url')); ?>" class="btn btn-default pull-right"><?php echo esc_html(get_sub_field('button-text')); ?></a>
+		<a href="<?php echo esc_url(get_sub_field('button-url')); ?>" class="btn btn-default pull-right"<?php if (get_sub_field('button-newtab')) { ?> target="_new"<?php } ?>><?php echo esc_html(get_sub_field('button-text')); ?></a>
 		<div class="clearfix"></div>
 
 	</div>
