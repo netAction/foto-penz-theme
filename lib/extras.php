@@ -82,7 +82,7 @@ function theme_customize_shop_link_background( $wp_customize ) {
 
 	$wp_customize->add_section( 'theme_shop_background' , array(
 		'title'      => 'Shop-Links',
-		'description' => 'Shortcode: [shoplink url="http://aktionsgutscheine.myobis.com" linktext="Jetzt buchen"]Hier ist der Shop![/shoplink]',
+		'description' => 'Das Hintergrund-Bild für alle Links zum Shooting-Shop; wird im Bagebuilder vom Widget „Shoplink“ verwendet',
 		'priority'   => 30,
 	) );
 

@@ -18,7 +18,7 @@
 	<div class="<?php echo $grid; ?>">
 		<a href="<?php echo get_sub_field('url') ?>" class="grid-gallery-link grid-gallery-navlink">
 			<div class="grid-gallery-image-wrapper">			
-				<?php echo wp_get_attachment_image(get_sub_field('image'), 'medium', false, false); ?>
+				<?php echo wp_get_attachment_image(get_sub_field('image'), 'thumbnail', false, false); ?>
 				<div class="title"><span><?php echo esc_html(get_sub_field('text')); ?></span></div>
 			</div>
 		</a>

@@ -15,6 +15,9 @@ if( have_rows('flexible-content') ):
 		elseif( get_row_layout() == 'jumbobox' ): 
 			get_template_part('templates/widget-jumbobox');
 
+		elseif( get_row_layout() == 'shoplink' ): 
+			get_template_part('templates/widget-shoplink');
+
 		elseif( get_row_layout() == 'rawhtml' ): 
 			get_template_part('templates/widget-rawhtml');
 
