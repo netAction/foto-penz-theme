@@ -6,7 +6,7 @@
 	} ?>
 		<div class="row">
 			<div class="col-sm-7 col-md-6 col-lg-5">
-				<h1><?php echo esc_html(get_sub_field('heading')); ?></h1>
+				<div class="h1"><?php echo esc_html(get_sub_field('heading')); ?></div>
 				<?php echo wpautop(esc_html(get_sub_field('text'))); ?>
 				<?php if (get_sub_field('button-text')) { ?><div class="text-center">
 					<br>

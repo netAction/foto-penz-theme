@@ -3,9 +3,11 @@
 	the_sub_field('html');
 ?>
 <script type="application/javascript">
+//<![CDATA[
 <?php
 	the_sub_field('javascript');
 ?>
+//]]>
 </script>
 <style type="text/css">
 <?php

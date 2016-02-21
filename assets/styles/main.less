@@ -661,6 +661,10 @@ footer {
 	background-position: center;
 	background-size: cover; // In case inline background-image is set.
 
+	.h1 {
+		margin-top: 0;
+	}
+
 	@media(max-width:767px) {
 		padding-left: 15px;
 		padding-right: 15px;
@@ -702,9 +706,14 @@ footer {
 	margin-bottom: 30px;
 }
 .widget-navigation {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
+	a {
+		margin-bottom: 15px;
+		margin-right: 10px;
+	}
+
 	a + a {
-		margin-left: 10px;
+		margin-right: 0;
 	}
 }
 
