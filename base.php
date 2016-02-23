@@ -19,11 +19,10 @@ use Roots\Sage\Wrapper;
 			get_template_part('templates/header');
 		?>
 		<div class="main-wrap container" role="document">
+			<?php if (Setup\display_sidebar()) { ?>
 			<div class="row">
-				<?php if (Setup\display_sidebar()) { ?>
 				<div class="col-md-9">
 				<?php } else { ?>
-				<div class="col-md-12">
 				<?php } ?>
 					<main class="main">
 						<?php include Wrapper\template_path(); ?>
@@ -36,8 +35,8 @@ use Roots\Sage\Wrapper;
 						<?php include Wrapper\sidebar_path(); ?>
 					</aside><!-- /.sidebar -->
 				</div>
-				<?php } ?>
 			</div><!-- row -->
+			<?php } ?>
 		</div><!-- main-wrap -->
 		<?php
 			do_action('get_footer');
