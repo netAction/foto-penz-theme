@@ -716,43 +716,6 @@
                     "max": ""
                 },
                 {
-                    "key": "56a7ff23913f3",
-                    "name": "columns",
-                    "label": "Spalten",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_56a7ff2b913f4",
-                            "label": "Position",
-                            "name": "position",
-                            "type": "select",
-                            "instructions": "Zeilenstart, Zeilenmitte und Zeilenende m\u00fcssen nacheinander vorkommen.Dazwischen kommt der Inhalt f\u00fcr die linke und rechte Spalte.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "start6+6": "Zeilenstart",
-                                "middle6+6": "Zeilenmitte",
-                                "end6+6": "Zeilenende"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "disabled": 0,
-                            "readonly": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
                     "key": "56c8cb84edf68",
                     "name": "grid-gallery",
                     "label": "Kachel-Galerie",
@@ -997,5 +960,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1456994615
+    "modified": 1457100298
 }
