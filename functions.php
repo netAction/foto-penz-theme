@@ -17,7 +17,7 @@ $sage_includes = [
 	'lib/wrapper.php',  // Theme wrapper class
 	'lib/gallery.php',  // Image Gallery
 	'lib/breadcrumb.php',// Breadcrumb
-	'lib/bootstrap-shortcodes.php',  // Some Shortcodes for Bootstrap elements in the WYSIWYG editor
+//	'lib/bootstrap-shortcodes.php',  // Some Shortcodes for Bootstrap elements in the WYSIWYG editor
 ];
 
 foreach ($sage_includes as $file) {
