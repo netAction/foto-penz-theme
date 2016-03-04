@@ -36,9 +36,6 @@ if( have_rows('flexible-content') ):
 		elseif( get_row_layout() == 'grid-navigation' ): 
 			get_template_part('templates/widget-grid-navigation');
 
-//		elseif( get_row_layout() == 'columns' ): 
-//			get_template_part('templates/widget-columns');
-
 		elseif( get_row_layout() == 'grid-gallery' ): 
 			get_template_part('templates/widget-grid-gallery');
 
