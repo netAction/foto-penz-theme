@@ -11,6 +11,7 @@ $( '.widget-flexgrid-gallery a' ).swipebox();
 
 (function($) {
 	// Slider gallery
+	if (!$('.widget-slider-gallery .widget-slider-gallery-gallery').length) return;
 
 	// Load the classic theme
 	Galleria.loadTheme('/wp-content/themes/foto-penz-theme/assets/scripts/galleria/classic/galleria.classic.min.js');

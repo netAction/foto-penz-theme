@@ -10,7 +10,7 @@
 			<div class="widget-slider-gallery-gallery">
 			<?php
 				$images = get_sub_field('gallery');
-				foreach ($images as $image) { print_r($image['sizes']); ?>
+				foreach ($images as $image) { ?>
 			<a href="<?php echo $image['sizes']['medium_large'] ?>">
 				<img src="<?php echo $image['sizes']['micro-thumb'] ?>">
 			</a>
@@ -32,7 +32,7 @@
 			<div class="widget-slider-gallery-gallery">
 			<?php
 				$images = get_sub_field('gallery');
-				foreach ($images as $image) { print_r($image['sizes']); ?>
+				foreach ($images as $image) { ?>
 			<a href="<?php echo $image['sizes']['medium_large'] ?>">
 				<img src="<?php echo $image['sizes']['micro-thumb'] ?>">
 			</a>
