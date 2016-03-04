@@ -42,6 +42,9 @@ if( have_rows('flexible-content') ):
 		elseif( get_row_layout() == 'grid-gallery' ): 
 			get_template_part('templates/widget-grid-gallery');
 
+		elseif( get_row_layout() == 'flexgrid-gallery' ): 
+			get_template_part('templates/widget-flexgrid-gallery');
+
 		elseif( get_row_layout() == 'slider-gallery' ): 
 			get_template_part('templates/widget-slider-gallery');
 

@@ -5,6 +5,7 @@ namespace Roots\Sage\Assets;
 function assets() {
 	wp_enqueue_style('bootstrap_css', get_template_directory_uri().'/assets/styles/bootstrap.min.css', false, null);
 	wp_enqueue_style('swipebox_css', get_template_directory_uri().'/assets/styles/swipebox.min.css', false, null);
+//	wp_enqueue_style('galleria_css', get_template_directory_uri().'/assets/scripts/galleria/classic/galleria.classic.css', false, null);
 	wp_enqueue_style('main_css', get_template_directory_uri().'/assets/styles/main.css', false, null);
 
 	if (is_single() && comments_open() && get_option('thread_comments')) {
@@ -17,6 +18,8 @@ function assets() {
 
 	wp_enqueue_script('bootstrap_js', get_template_directory_uri().'/assets/scripts/bootstrap.min.js', ['jquery'], null, true);
 	wp_enqueue_script('swipebox_js', get_template_directory_uri().'/assets/scripts/jquery.swipebox.min.js', ['jquery'], null, true);
+	wp_enqueue_script('galleria_js', get_template_directory_uri().'/assets/scripts/galleria/galleria-1.4.2.min.js', ['jquery'], null, true);
+//	wp_enqueue_script('galleria_theme_js', get_template_directory_uri().'/assets/scripts/galleria/classic/galleria.classic.min.js', ['galleria_js'], null, true);
 	wp_enqueue_script('main_js', get_template_directory_uri().'/assets/scripts/main.js', ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

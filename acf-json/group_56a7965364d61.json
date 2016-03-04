@@ -42,6 +42,26 @@
                             "tabs": "all",
                             "toolbar": "full",
                             "media_upload": 1
+                        },
+                        {
+                            "key": "field_56d56090b6d7a",
+                            "label": "Breite",
+                            "name": "full-width",
+                            "type": "checkbox",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "\u00dcber gesamten Container": "\u00dcber gesamten Container"
+                            },
+                            "default_value": [],
+                            "layout": "vertical",
+                            "toggle": 0
                         }
                     ],
                     "min": "",
@@ -797,6 +817,88 @@
                     "max": ""
                 },
                 {
+                    "key": "56d7ee04793bb",
+                    "name": "flexgrid-gallery",
+                    "label": "Flexible Kachel-Galerie",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_56d7ee14793be",
+                            "label": "Bilder",
+                            "name": "images",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": "",
+                            "max": "",
+                            "layout": "table",
+                            "button_label": "Eintrag hinzuf\u00fcgen",
+                            "sub_fields": [
+                                {
+                                    "key": "field_56d7ee27793bf",
+                                    "label": "Bild",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_56d7ee50793c0",
+                                    "label": "Zeilenumbruch",
+                                    "name": "clear",
+                                    "type": "select",
+                                    "instructions": "Nach dem Bild einen Zeilenumbruch einf\u00fcgen",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "never": "nein",
+                                        "xs": "kleine Bildschirme",
+                                        "always": "immer"
+                                    },
+                                    "default_value": [],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "disabled": 0,
+                                    "readonly": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "56c8cbe4edf6c",
                     "name": "slider-gallery",
                     "label": "Slider-Galerie",
@@ -844,6 +946,32 @@
                             "tabs": "all",
                             "toolbar": "full",
                             "media_upload": 1
+                        },
+                        {
+                            "key": "field_56d54cf0dd3bf",
+                            "label": "Position",
+                            "name": "position",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "right": "Galerie rechts",
+                                "center": "Galerie zentriert"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
                         }
                     ],
                     "min": "",
@@ -869,5 +997,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1456072983
+    "modified": 1456994615
 }

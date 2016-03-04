@@ -53,7 +53,10 @@ if (is_admin()) {
 
 
 
-
+add_action( 'after_setup_theme', __NAMESPACE__ .'\\more_image_sizes' );
+function more_image_sizes() {
+    add_image_size( 'micro-thumb', 300, 300, false );
+}
 
 
 // ### Setup Logo image
