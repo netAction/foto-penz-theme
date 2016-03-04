@@ -123,7 +123,7 @@ function gallery($attr) {
 			$output .= '<div class="caption">'."\n" . wptexturize($attachment->post_excerpt) . '</div>'."\n";
 		}
 
-		if (($attachment->linkurl) || ($link == 'file')) {
+		if ($link == 'file') {
 			$output .= '<!-- end link --></a>'."\n";
 		}
 
