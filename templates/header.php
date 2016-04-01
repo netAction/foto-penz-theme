@@ -1,3 +1,4 @@
+<?php use Roots\Sage\Titles; ?>
 <div class="container header-footer-widgets hidden-xs">
 	<?php dynamic_sidebar('sidebar-header'); ?>
 </div>
@@ -7,13 +8,13 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-0 col-md-3 col-lg-3 banner-logo-col">
+			<div class="col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-0 banner-logo-col">
 				<a href="<?= esc_url(home_url('/')); ?>">
 					<img src="<?php echo get_theme_mod('logo'); ?>" class="banner-logo">
 				</a>
 			</div>
 			<div class="clearfix hidden-sm hidden-md hidden-lg"></div>
-			<div class="col-sm-8 col-md-9 col-lg-9">
+			<div class="col-sm-10">
 				<?php
 					// ### Load background image ###
 					// http://wordpress.stackexchange.com/questions/149164/featured-image-inherited-from-parent-page
@@ -79,6 +80,21 @@
 			</div>
 		</div><!-- row -->
 
-		<?php Roots\Sage\Breadcrumb\nav_breadcrumb(); ?>
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<?php Roots\Sage\Breadcrumb\nav_breadcrumb(); ?>
+
+				<div class="page-header">
+					<?php if (Titles\title()) { ?>
+						<h2><?= Titles\title(); ?></h2>
+					<?php } ?>
+					<?php
+						$claim = get_field( "claim" );
+						if ($claim) { ?>
+						<h3><?php echo $claim; ?></h3>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
 	</div>
 </header>
