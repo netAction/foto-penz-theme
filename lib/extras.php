@@ -99,3 +99,7 @@ function theme_customize_shop_link_background( $wp_customize ) {
 
 }
 add_action( 'customize_register',  __NAMESPACE__ .'\\theme_customize_shop_link_background' );
+
+
+// Activate RSS feed
+add_theme_support( 'automatic-feed-links' );
